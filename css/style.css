@@ -1,13 +1,14 @@
-*,
-::after ::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    font-family: "Crimson Pro", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 body {
-  font-family: "Crimson Pro", sans-serif;
-  min-height: 100vh;
   background-color: #181719;
   color: #ffffff;
 }
@@ -20,21 +21,22 @@ li {
   list-style-type: none;
 }
 
-.header {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 46px;
 }
 
 .links {
+  font-family: "Montserrat" sans-serif;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .link {
-  font-family: "Montserrat" sans-serif;
-  font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.375rem;
   margin-left: 6rem;
@@ -44,7 +46,7 @@ li {
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .logo {
@@ -59,41 +61,48 @@ li {
   opacity: 75%;
 }
 
+.hum-menu {
+  display: none;
+  transition: all 0.5s;
+}
+
+.hum-menu > i {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.fa-long-arrow-alt-right {
+  position: relative;
+  top: 3px;
+  left: 7px;
+}
+
 .main {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-.photo-box .img-photo-box {
-  max-width: 750px;
-  height: 600px;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.interior-image {
-  width: 90%;
-}
-
-h1 {
-  font-family: "Lora" sans-serif;
-  font-weight: 500;
-  font-size: 3rem;
-  line-height: 3.375rem;
+  margin-top: 100px;
 }
 
 .presentation {
-  max-width: 410px;
+  box-sizing: border-box;
+  width: 45%;
+  color: #fff;
+}
+
+.presentation h2 {
+  font-family: "Lora" sans-serif;
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 3.375rem;
+  margin-left: 50px;
 }
 
 .presentation-text {
   font-family: "Montserrat" sans-serif;
   font-size: 1.5rem;
   line-height: 1.6rem;
+  margin-left: 50px;
+  width: 400px;
 }
 
 .read-more {
@@ -102,52 +111,181 @@ h1 {
   font-weight: bold;
   font-size: 1.125rem;
   line-height: 1.5rem;
+  margin-left: 50px;
+}
+
+.photo-box {
+  position: relative;
+  margin-bottom: 150px;
+  width: 90%;
+}
+
+.photo-box > img {
+  display: block;
+  width: 90%;
+  height: 100%;
+  margin: auto;
 }
 
 /*  Profile Attachment */
-.author-box {
-  width: 350px;
-  height: 190px;
-  z-index: 1;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: #181719;
-  margin-top: -175px;
-  margin-left: 200px;
-
-}
 
 .profile-flex {
   display: flex;
-  background-color: #181719;
 }
 
-.img-box .image-dp {
-  border-radius: 50%;
-  width: 50px;
+.profile-flex img {
+  display: block;
+  max-width: 90px;
+ border-radius: 50%;
 }
 
-.author-infos {
-  max-width: 150px;
-  background-color: #181719;
+.author-infos p {
+  margin: 0;
 }
 
-.author-tag {
-  font-family: "Lora" sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  width: 200px;
-}
 .author-name {
   font-family: "Montserrat" sans-serif;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.1rem;
+  margin-top: 5px;
 }
 
 .author-job {
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 0.9rem;
-  opacity: 50%;
+  margin-top: 10px;
+  color: #828282;
+}
+
+.author-tagline h2{
+    font-family: "Lora" sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .author-box {
+    position: absolute;
+    width: 410px;
+    height: 186px;
+    padding: 18px;
+    top: 80%;
+    left: 30%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #181719;
+    color: #fff
+  }
+
+  .fa-long-arrow-alt-right {
+    position: relative;
+    top: 3px;
+    left: 7px;
+}
+
+  footer {
+    text-align: center;
+    color: #fff;
+    padding:10px;
+}
+
+.links-overflow {
+    position: fixed;
+    overflow: hidden;
+}
+
+
+@media screen and (max-width: 800px) {
+    .main {
+        display: block;
+        box-sizing: border-box;
+      }
+      .presentation {
+        width : 100%;
+        margin-bottom: 15px;
+      }
+      .presentation h2, .presentation-text, .read-more {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 80%;
+        box-sizing: border-box;
+      }
+      .photo-box {
+        width : 100%;
+        margin-bottom: 200px;
+      }
+      .photo-box img {
+        width: 100%;
+      }
+      .author-box {
+        top: 70%;
+        left: 5%;
+        width:310px;
+      }
+      header {
+        flex-direction: column;
+        background-color: #181719;
+    }
+
+        .header-click {
+        height: 100%;
+    }
+
+    .logo {
+        width: fit-content;
+    }
+    .hum-menu {
+        position: absolute;
+        top: 70px;
+        left: 80%;
+        display: block;
+        cursor: pointer;
+        z-index: 6;
+    }
+    .lines {
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+        width: 20px;
+    }
+    .line2-click {
+        background-color: #181719;
+    }
+     .line1-click {
+        transform: rotate(-45deg);
+        transition: all 0.25s;
+        transform-origin: bottom right;
+    }
+    .line3-click {
+        transform: rotate(45deg);
+        transition: all 0.25s;
+        transform-origin: top right;
+
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        padding-left: 0;
+        box-sizing: border-box;
+        background-color: #181719;
+        position: absolute;
+        top: 0;
+        z-index: 4;
+        justify-content: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .links li {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 20px;
+    }
 }
